@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 public class MoveAI : MonoBehaviour
 {
     private float speed = -0.02f;
+    private Text score;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        score= GameObject.Find("Canvas").transform.Find("Score").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -21,6 +22,8 @@ public class MoveAI : MonoBehaviour
         if(transform.position.y<= -13.13f)
         {
             Destroy(this.gameObject);
+            CarPlayer.score++;
+            score.text=CarPlayer.score.ToString();
         }
     }
 }

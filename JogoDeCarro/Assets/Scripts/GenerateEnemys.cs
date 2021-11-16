@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GenerateEnemys : MonoBehaviour
 {
+    //public Sprite[] inimigo;
     public GameObject inimigo;
     public float timer=0;
     // Start is called before the first frame update

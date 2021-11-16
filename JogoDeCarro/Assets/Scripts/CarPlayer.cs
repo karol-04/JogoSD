@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CarPlayer : MonoBehaviour
 {
+    public static float score=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +24,16 @@ public class CarPlayer : MonoBehaviour
         {
             transform.position+=new Vector3(-0.01f,0,0);
         }
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if(collision.gameObject.tag == "inimigo")
+        {
+            Application.LoadLevel(Application.loadedLevel);
+            CarPlayer.score=0;
+        }
+        
     }
 }
