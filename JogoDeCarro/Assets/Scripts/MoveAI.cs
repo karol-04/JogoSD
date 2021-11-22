@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MoveAI : MonoBehaviour
 {
-    private float speed = -0.02f;
+    private float speed = -0.03f;
     private Text score;
 
     // Start is called before the first frame update

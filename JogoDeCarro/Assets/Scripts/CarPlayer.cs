@@ -16,13 +16,13 @@ public class CarPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("right"))
+        if(Input.GetKey("right")||Input.GetKey("d"))
         {
-            transform.position+=new Vector3(0.01f,0,0);
+            transform.position+=new Vector3(0.02f,0,0);
         }
-        else if(Input.GetKey("left"))
+        else if(Input.GetKey("left")||Input.GetKey("a"))
         {
-            transform.position+=new Vector3(-0.01f,0,0);
+            transform.position+=new Vector3(-0.02f,0,0);
         }
     }
     

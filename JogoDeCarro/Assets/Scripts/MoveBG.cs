@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MoveBG : MonoBehaviour
 {
     private bool hasInstantiate= false;
-    private float speed = -0.015f;
+    private float speed = -0.02f;
     // Start is called before the first frame update
     void Start()
     {
