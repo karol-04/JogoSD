@@ -10,8 +10,8 @@ public class CarPlayer : MonoBehaviour
     public AudioSource audioSource;
     void Start()
     {
-        moveSpeed= 5f;
-        rotationSpeed= 100f;
+        moveSpeed= 200f;
+        rotationSpeed= 5000f;
     }
 
     void Update()
