@@ -6,34 +6,27 @@ using UnityEngine.SceneManagement;
 
 public class CarPlayer : MonoBehaviour
 {
-    public static float score=0;
-    // Start is called before the first frame update
+    private float move, moveSpeed, rotation, rotationSpeed;
+    public AudioSource audioSource;
     void Start()
     {
-        
+        moveSpeed= 5f;
+        rotationSpeed= 100f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("right")||Input.GetKey("d"))
+        move= Input.GetAxis("Vertical")*moveSpeed*Time.deltaTime;
+        rotation= Input.GetAxis("Horizontal")*rotationSpeed*Time.deltaTime;
+        if(Input.GetKey("b"))
         {
-            transform.position+=new Vector3(0.02f,0,0);
-        }
-        else if(Input.GetKey("left")||Input.GetKey("a"))
-        {
-            transform.position+=new Vector3(-0.02f,0,0);
+            audioSource.Play();
         }
     }
     
-    void OnCollisionEnter2D(Collision2D collision)
+    private void LateUpdate()
     {
-        
-        if(collision.gameObject.tag == "inimigo")
-        {
-            Application.LoadLevel(Application.loadedLevel);
-            CarPlayer.score=0;
-        }
-        
+        transform.Translate(0f,move,0f);
+        transform.Rotate(0f,0f, rotation);
     }
 }
